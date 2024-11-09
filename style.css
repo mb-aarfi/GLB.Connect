@@ -839,3 +839,37 @@ button.next:hover {
 
 
 
+/* Default styles for larger screens */
+.feature-card {
+    width: 25%;
+    margin: 1%;
+}
+
+/* Styles for tablets */
+@media (max-width: 768px) {
+    .feature-card {
+        width: 45%;
+        margin: 2%;
+    }
+}
+
+/* Styles for mobile phones */
+@media (max-width: 480px) {
+    .feature-card {
+        width: 100%;
+        margin: 5% 0;
+    }
+    .peer-card {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .next-button {
+        position: static;
+        margin-top: 10px;
+    }
+}
+
+
+
+
+
