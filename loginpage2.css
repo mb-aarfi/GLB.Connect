@@ -1,0 +1,97 @@
+# {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'Poppins' , sans-serif;
+}
+
+.girl {
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%); 
+    left: 220px; 
+}
+
+/* Adjust the size of the image if needed */
+.girl img {
+    width: 420px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#glbLogo {
+    position: absolute;
+    top: 80px;      /* Aligns the image to the top */
+    right: 545px;    /* Aligns the image to the right */
+    margin: 10px; /* Optional: Adds space from the edge */
+    width: 170px; 
+}
+
+#text {
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    top: 250px;         /* Aligns the div to the top */
+    right: 632px;       /* Aligns the div to the right */
+    margin: 10px;   /* Adds space from the edge */
+    padding: 10px;
+    font-size: 20px;
+    bottom: 3px;
+}
+#text1 {
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    top: 280px;         /* Aligns the div to the top */
+    right: 410px;       /* Aligns the div to the right */
+    margin: 8px;   /* Adds space from the edge */
+    padding: 20px;
+    font-size: 16px;
+}
+.OTPbox {
+    display: flex;
+    gap: 25px;
+    justify-content: flex-end; /* Aligns the boxes to the right */
+    margin-right: 430px; /* Optional: Add spacing from the right */
+    margin-top: 400px;
+}
+
+.OTPbox input {
+    width: 65px;
+    height: 65px;
+    text-align: center;
+    font-size: 24px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #FF2359;
+}
+#text2 {
+    font-family: 'Poppins', sans-serif;
+    position: absolute;        /* Aligns the div to the top */
+    right: 580px;       /* Aligns the div to the right */
+    font-size: 16px;
+}
+
+#SubmitButton{
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    top: 590px;         /* Aligns the div to the top */
+    right: 420px;       /* Aligns the div to the right */
+    margin: 10px;   /* Adds space from the edge */
+    padding: 22px;
+    font-size: 17px;
+    width: 370px;
+    height: 1px; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    border: 2px solid ;
+    border-radius: 8px;
+    margin-top: 22px;
+    font-family: 'Poppins', sans-serif;  /* Change to your preferred font */
+    font-size: 18px;                     /* Adjust font size */
+    font-weight: bold;                   /* Make the text bold */
+    color: white;
+    background-color: #FF2359;
+    cursor: pointer;  
+}
+#SubmitButton:hover {
+    background-color: rgb(99, 23, 137);
+}
