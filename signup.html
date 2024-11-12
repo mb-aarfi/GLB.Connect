@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLB.Connect Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="left-column">
+        <img src="image2.png" id="logo">
+    </div>
+
+    <div class="right-column">
+        <div class="profile-pic-container">
+            <label for="profile-pic">
+                <img src="Profile image.png" id="pic" alt="Upload Icon" class="camera-icon">
+            </label>
+            <input type="file" id="profile-pic" class="file-input" accept="image/*" onchange="displayImage(event)">
+        </div>
+
+        <form>
+            <label>User Name</label>
+            <input type="text" placeholder="your username" required>
+
+            <label>Full Name</label>
+            <input type="text" placeholder="your fullname" required>
+
+            <label>Official Email Address</label>
+            <input type="email" placeholder="your email address" required>
+
+            <label>Mobile Number</label>
+            <input type="tel" placeholder="your mobile number" required>
+
+            <label>Skills</label>
+            <input type="text" placeholder="your skills" required>
+
+            <label>Branch</label>
+            <input type="text" placeholder="your branch" required>
+
+            <label>Year of Study</label>
+            <input type="text" placeholder="your current year" required>
+
+            <label>LinkedIn/Github Profile</label>
+            <input type="url" placeholder="your linkedin/github profile" required>
+
+            <button type="submit" class="signup-button">Sign Up</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
