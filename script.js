@@ -56,6 +56,12 @@ document.querySelector('.feedback-form button').addEventListener('click', functi
     }
 });
 
+document.querySelector('.start-btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('.benefits-section').scrollIntoView({
+        behavior: 'smooth'
+    });
+});
 
 
 
