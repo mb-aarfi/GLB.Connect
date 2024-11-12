@@ -1,0 +1,136 @@
+.girl {
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%); 
+    left: 220px; 
+}
+
+/* Adjust the size of the image if needed */
+.girl img {
+    width: 420px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+#glbLogo {
+    position: absolute;
+    top: 80px;      /* Aligns the image to the top */
+    right: 515px;    /* Aligns the image to the right */
+    margin: 10px; /* Optional: Adds space from the edge */
+    width: 170px; 
+}
+#text {
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    top: 230px;         /* Aligns the div to the top */
+    right: 390px;       /* Aligns the div to the right */
+    margin: 10px;   /* Adds space from the edge */
+    padding: 10px;
+    font-size: 35px;
+    bottom: 3px;
+}
+#text1 {
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    color:#383838;
+    top: 280px;         /* Aligns the div to the top */
+    right: 345px;       /* Aligns the div to the right */
+    margin: 10px;   /* Adds space from the edge */
+    padding: 20px;
+    font-size: 16px;
+}
+#email {
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    top: 350px;         /* Aligns the div to the top */
+    right: 661px;       /* Aligns the div to the right */
+    margin: 10px;   /* Adds space from the edge */
+    padding: 20px;
+    font-size: 16px;
+}
+#emailBox{
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    top: 390px;         /* Aligns the div to the top */
+    right: 350px;       /* Aligns the div to the right */
+    margin: 10px;   /* Adds space from the edge */
+    padding: 20px;
+    font-size: 16px;
+    width: 400px;
+    height: 1px; 
+    border: 2px solid rgb(145, 142, 142);
+    border-radius: 8px;
+    margin-top: 22px;
+}
+
+#pass{
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    top: 450px;         /* Aligns the div to the top */
+    right: 695px;       /* Aligns the div to the right */
+    margin: 10px;   /* Adds space from the edge */
+    padding: 20px;
+    font-size: 16px;
+}
+
+#Password{
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    top: 490px;         /* Aligns the div to the top */
+    right: 350px;       /* Aligns the div to the right */
+    margin: 10px;   /* Adds space from the edge */
+    padding: 20px;
+    font-size: 16px;
+    width: 400px;
+    height: 1px; 
+    border: 2px solid rgb(145, 142, 142);
+    border-radius: 8px;
+    margin-top: 22px; 
+}
+#forgot{
+    font-family: 'Poppins', sans-serif;
+    color: #0056b3;
+    top: 560px;
+    right: 360px;
+    position: absolute;
+}
+#SubmitButton{
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    top: 590px;         /* Aligns the div to the top */
+    right: 350px;       /* Aligns the div to the right */
+    margin: 10px;   /* Adds space from the edge */
+    padding: 22px;
+    font-size: 17px;
+    width: 445px;
+    height: 1px; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    border: 2px solid ;
+    border-radius: 8px;
+    margin-top: 22px;
+    font-family: 'Poppins', sans-serif;  /* Change to your preferred font */
+    font-size: 18px;                     /* Adjust font size */
+    font-weight: bold;                   /* Make the text bold */
+    color: white;
+    background-color: #FF2359;
+    cursor: pointer;   
+}
+#SubmitButton:hover {
+    background-color: rgb(229, 98, 42);
+}
+#text3{
+    margin-top: 680px;
+    text-align: right;
+    margin-right: 250px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: grey;
+}
+.signup-link {
+    color: #0056b3;
+}
+
+
+
