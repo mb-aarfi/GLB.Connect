@@ -1,0 +1,281 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 48px;
+    z-index: 9999;
+}
+
+.main-content {
+    padding-top: 80px;
+}
+
+.navbar.scrolled {
+    background-color: black;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: #ff2975;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff2975;
+}
+
+.search-bar {
+    margin-top: 5px;
+    display: flex;
+    margin-right: 70px;
+    justify-content: center;
+}
+
+.search-input {
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    width: 180px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.search-input::placeholder {
+    color: #ccc;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #ff2975; /* Highlight border on focus */
+}
+
+/* Hero Section */
+.about-us .hero {
+    margin-top: 80px;
+    text-align: center;
+    padding: 120px 20px;
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('bg.png') no-repeat center center / cover;
+}
+
+.about-us .hero h1{
+    margin-top: -10px;
+    font-size: 80px;
+}
+
+.about-us .hero p{
+    margin-top: -60px;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-size: 20px;
+}
+
+
+.start-btn {
+    background-color: #ff2975;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Vision Section */
+.vision {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.vision h2 {
+    font-size: 40px;
+    color: #ff2975;
+    margin-bottom: 0px;
+}
+
+.vision p{
+    font-size: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+/* Why Choose Section */
+.why-choose {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 250px;
+    margin-right: 250px;
+    padding: 40px 20px;
+}
+
+.why-choose h2{
+    font-size: 40px;
+    color: #ff2975;
+    margin-bottom: 0px;
+}
+
+.why-choose .feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Adjust as needed for width on different screen sizes */
+}
+
+.why-choose .feature img {
+    width: 150px; /* Adjust as needed */
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.why-choose .feature h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin: 10px 0;
+}
+
+.why-choose .feature p {
+    font-size: 1em;
+    color: #666;
+    max-width: 600px;
+}
+
+.why-choose .feature .learn-more-btn {
+    background-color: #ff2975;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 15px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+/* Teams Section */
+.teams {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.teams h2{
+    font-size: 40px;
+    margin-top: -5px;
+}
+
+.team-carousel {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+.team-member h3 {
+    color: #ff2975;
+}
+
+/* Join Us Section */
+.join-us {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.join-us h2 {
+    font-size: 40px;
+    color: #ff2975;
+    margin-bottom: 0px;
+}
+
+.join-us p{
+    font-size: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 50px;
+}
+
+.social-footer {
+    background-color: #ff2975; /* Pink background */
+    padding: 15px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.5em;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+.social-icons img {
+    width: 30px; /* Adjust size as needed */
+    height: 30px;
+    filter: brightness(0) invert(1); /* Ensures icons are white on pink */
+}
+
