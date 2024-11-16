@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLB.Connect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="sessionsfcss.css">
+</head>
+<body>
+  <div class="navbar">
+    <a href="#" class="logo">
+        <img src="logo.png" alt="GLB.Connect Logo" class="logo-img">
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="qnathreads.html">Q&A Threads</a></li>
+        <li><a href="lost&found.html">Lost & Found</a></li>
+        <li><a href="resources.html">Resource</a></li>
+        <li><a href="anonymous.html">Anonymous Post</a></li>
+        <li><a href="sessionsfirst.html">Sessions</a></li>
+        <li><a href="alumnifirst.html">Alumni Network</a></li>
+        <li><a href="aboutus.html">About</a></li>
+    </ul>
+
+    <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Search...">
+    </div>
+</div>
+  
+  <main>
+    <section class="upcoming-sessions">
+      <h2>Upcoming Sessions</h2>
+      <div class="carousel-container">
+        <button class="carousel-btn prev-btn">&#9664;</button>
+        <div class="carousel-images">
+          <img src="card (1).png" alt="Session 1">
+          <img src="card (2).png" alt="Session 2">
+          <img src="card.png" alt="Session 3">
+          <img src="card (1).png" alt="Session 4">
+          <img src="card (2).png" alt="Session 5">
+          <!-- Add more images as needed -->
+        </div>
+        <button class="carousel-btn next-btn">&#9654;</button>
+      </div>
+    </section>
+    
+    
+    <section class="cta-section">
+      <h2>Want To Make A Change By Taking<br> A Session - Live Or Recorded?</h2>
+      <h3>Take A Session</h3>
+      <div class="live-recorded-options">
+        <a href="sessiondetails.html">
+        <button class="option live">Live?</button></a>
+       <p><b>or</b></p>
+       <a href="sessiondetails.html">
+        <button class="option recorded">Recorded?</button></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="social-footer">
+    <div class="social-icons">
+        <a href="#" target="_blank"><img src="fb.png" alt="Facebook"></a>
+        <a href="#" target="_blank"><img src="Group.png" alt="Twitter"></a>
+        <a href="#" target="_blank"><img src="insta.png" alt="Instagram"></a>
+        <a href="#" target="_blank"><img src="Linkedin.png" alt="LinkedIn"></a>
+    </div>
+</div>
+</footer>
+
+  <script>
+    const carouselImages = document.querySelector('.carousel-images');
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn');
+
+let scrollPosition = 0; // Track the current scroll position
+const scrollAmount = 270; // Adjust scroll amount to match the image width + gap
+
+// Scroll to the next set of images
+nextBtn.addEventListener('click', () => {
+  scrollPosition += scrollAmount;
+  carouselImages.style.transform = `translateX(-${scrollPosition}px)`;
+});
+
+// Scroll to the previous set of images
+prevBtn.addEventListener('click', () => {
+  scrollPosition -= scrollAmount;
+  if (scrollPosition < 0) scrollPosition = 0; // Prevent scrolling before the first image
+  carouselImages.style.transform = `translateX(-${scrollPosition}px)`;
+});
+
+  </script>
+</body>
+</html>

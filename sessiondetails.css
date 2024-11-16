@@ -1,0 +1,227 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 48px;
+    z-index: 9999;
+}
+
+.main-content {
+    padding-top: 80px;
+}
+
+.navbar.scrolled {
+    background-color: black;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: #ff2975;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff2975;
+}
+
+.search-bar {
+    margin-top: 5px;
+    display: flex;
+    margin-right: 70px;
+    justify-content: center;
+}
+
+.search-input {
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    width: 180px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.search-input::placeholder {
+    color: #ccc;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #ff2975; /* Highlight border on focus */
+}
+
+
+.container {
+    display: flex;
+    align-items: flex-start; /* Align items at the top */
+}
+
+.session {
+    margin-top: 79px;
+    width: 330px;
+    height: 730px;
+    margin-bottom: 0px;
+}
+
+.section-heading {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 130px;  /* Space from fixed navbar */
+    color:#FF2359;       /* Text color */
+    white-space: nowrap;  /* Prevent text from wrapping */
+    overflow: visible;    /* Ensure the entire text is visible */
+    width: auto;         /* Auto width to fit content */
+    max-width: 80%;     /* Ensure it does not overflow the container */
+    box-sizing: border-box;
+    margin-bottom: 0px;
+    margin-right: -240px;
+    position:absolute;
+    left: 57%; /* Move it horizontally to the center */
+    transform: translate(-50%, -50%); /* Adjust to truly center it */
+    width: 100%;
+}
+
+
+
+.square-wrapper {
+    display: flex;
+    flex-direction: row; /* Place squares side by side */
+    gap: 60px; /* Space between the squares */
+    margin-left: 20px; /* Center the wrapper */
+    margin-right: 100px; /* Ensure there's no extra space on the right */
+    width: 60%; /* Set width to 80% to avoid overflow */
+}
+
+.dashed-square {
+    margin-top: 170px;
+    width: 400px;
+    height: 490px;
+    border: 2px dashed #FF2359;
+    display: flex;
+    align-items: flex-start; /* Align content at the top */
+    justify-content: center;
+    text-align: left;
+    border-radius: 10px;
+    padding: 20px; /* Add padding inside the square */
+    margin-left: 40px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Spacing between labels and inputs */
+    width: 100%;
+}
+
+.details label {
+    font-family: 'Noto Sans';
+    margin-top: 6px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: grey;
+}
+
+.details input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 400px;
+    height: 45px;
+    box-sizing: border-box; /* Ensures padding doesn’t affect width */
+    border: 2px solid #FF2359;
+}
+
+#session-duration{
+    width: 409px;
+}
+
+.file-upload-icon {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #333; /* Optional: Set text/icon color */
+    padding: 8px;
+    border: 2px solid #FF2359 ;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #f9f9f9;
+    width: 390px;
+    height: 30px;
+}
+
+.file-upload-icon img {
+    vertical-align: middle;
+}
+
+#session-description{
+    height:200px;
+    border:2px solid #FF2359;
+    border-radius: 5px;
+    width: 400px;
+}
+
+.publish-button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: -80px;
+    margin-left: 300px;
+}
+
+.publish-button {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #FF2359; /* Set your preferred color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 180px;
+}
+
+.publish-button:hover {
+    background-color: #ff2975;  /* Darken on hover */
+}

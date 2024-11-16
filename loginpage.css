@@ -118,7 +118,7 @@
     cursor: pointer;   
 }
 #SubmitButton:hover {
-    background-color: rgb(229, 98, 42);
+    background-color: rgb(0, 0, 0);
 }
 #text3{
     margin-top: 680px;

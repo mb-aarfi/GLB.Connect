@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLB Connect - Mentor Search</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="sessions.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" class="logo">
+            <img src="logo.png" alt="GLB.Connect Logo" class="logo-img">
+        </a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Q&A Threads</a></li>
+            <li><a href="#">Lost & Found</a></li>
+            <li><a href="#">Resource</a></li>
+            <li><a href="#">Anonymous Post</a></li>
+            <li><a href="#">Sessions</a></li>
+            <li><a href="#">Alumni Network</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search...">
+        </div>
+    </div>
+
+        <div class="searchb">
+            <input type="text" placeholder="Search your alumni">
+            <button>🔍</button>
+        </div>
+    </header>
+
+  <!-- Carousel Section -->
+  <section class="carousel">
+    <button class="carousel-btn prev-btn">&#9664;</button>
+    <div class="carousel-items">
+      <div class="carousel-item">
+        <img src="almun.png" alt="David Miller">
+        <h4>Muhammad Baqir</h4>
+        <p>Microsoft</p>
+        <span>Software Engineer</span>
+      </div>
+      
+      <div class="carousel-item">
+        <img src="almun.png" alt="David Miller">
+        <h4>Nisha Ahmad</h4>
+        <p>Microsoft</p>
+        <span>Software Engineer</span>
+      </div>
+  
+      <div class="carousel-item">
+        <img src="almun.png" alt="David Miller">
+        <h4>Maahi Dhaka</h4>
+        <p>Amazon</p>
+        <span>Software Engineer</span>
+      </div>
+  
+      <div class="carousel-item">
+        <img src="almun.png" alt="David Miller">
+        <h4>Kshitij Dwivedi</h4>
+        <p>Amazon</p>
+        <span>Software Engineer</span>
+      </div>
+  
+      <div class="carousel-item">
+        <img src="almun.png" alt="David Miller">
+        <h4>John Doe</h4>
+        <p>Google</p>
+        <span>Senior Developer</span>
+      </div>
+
+      <div class="carousel-item">
+        <img src="almun.png" alt="David Miller">
+        <h4>John Doe</h4>
+        <p>Meta</p>
+        <span>Senior Developer</span>
+      </div>
+    </div>
+    <button class="carousel-btn next-btn">&#9654;</button>
+  </section>
+  
+
+  <!-- Achievement Section -->
+  <section class="achievement">
+    <div class="call-section">
+        <img src="imalm.jpg" alt="Alumni Image" class="centered-image">
+    </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="social-footer">
+    <div class="social-icons">
+        <a href="#" target="_blank"><img src="fb.png" alt="Facebook"></a>
+        <a href="#" target="_blank"><img src="Group.png" alt="Twitter"></a>
+        <a href="#" target="_blank"><img src="insta.png" alt="Instagram"></a>
+        <a href="#" target="_blank"><img src="Linkedin.png" alt="LinkedIn"></a>
+    </div>
+</div>
+</footer>
+
+<script>
+let currentIndex = 4; // Start from the 5th item (index 4)
+const carouselItems = document.querySelectorAll('.carousel-item');
+const totalItems = carouselItems.length;
+
+// Initially show the first 4 items
+function showInitialItems() {
+  for (let i = 0; i < 4; i++) {
+    carouselItems[i].classList.add('show');
+  }
+}
+
+function showItem(index) {
+  // Show the item corresponding to the index, add 'show' class to it
+  if (index < totalItems) {
+    carouselItems[index].classList.add('show');
+  }
+}
+
+function hideItem(index) {
+  // Remove the 'show' class to hide the item
+  if (index < totalItems) {
+    carouselItems[index].classList.remove('show');
+  }
+}
+
+function nextItem() {
+  // Hide the current item and show the next one
+  if (currentIndex < totalItems) {
+    hideItem(currentIndex);
+    currentIndex++;
+    showItem(currentIndex);
+  }
+}
+
+function prevItem() {
+  // Hide the current item and show the previous one
+  if (currentIndex > 4) {  // Ensure we don't go back to the first 4 items
+    hideItem(currentIndex);
+    currentIndex--;
+    showItem(currentIndex);
+  }
+}
+
+// Initialize by showing the first 4 items
+showInitialItems();
+
+// Attach event listeners for the buttons
+document.querySelector('.next-btn').addEventListener('click', nextItem);
+document.querySelector('.prev-btn').addEventListener('click', prevItem);
+
+
+  </script>
+  
+
+</body>
+</html>

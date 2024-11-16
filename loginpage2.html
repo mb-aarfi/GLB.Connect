@@ -1,25 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>GLB.Connect</title>
         <link rel="stylesheet" href="loginpage2.css">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     </head>
     <body>
-        <div class="girl"><img src="loginPageimg.png" alt=""></div>
-        <div id="glbLogo"><img src="Group 19413.png"></div>
+        <div class="girl"><img src="loginPageimg.png" alt="Illustration"></div>
+        <div id="glbLogo"><img src="logo.png" alt="GLB Logo"></div>
         <b id="text">Enter your OTP</b>
-        <p id="text1">We’ve shared an OTP on your mobile number<br><b>+91 1234567890</b></p> 
+        <p id="text1">
+            We’ve shared an OTP on your mobile number<br>
+            <b>+91 1234567890</b>
+        </p> 
         <div class="OTPbox">
             <input type="text" id="OTP1" maxlength="1" oninput="moveFocus(1)">
             <input type="text" id="OTP2" maxlength="1" oninput="moveFocus(2)">
             <input type="text" id="OTP3" maxlength="1" oninput="moveFocus(3)">
             <input type="text" id="OTP4" maxlength="1" oninput="moveFocus(4)">
-        </div>
-        <p id="text2">Didn't received?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <b>Resend</b></p>
-        <button type="submit" id="SubmitButton">Submit    </button>
+        </div>        
+        <p id="text2">
+            Didn't receive?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#"> <b>Resend</b> </a>
+        </p>
+        <button type="button" id="SubmitButton">Submit</button>
 
+        <script src="login.js"></script>
     </body>
 </html>

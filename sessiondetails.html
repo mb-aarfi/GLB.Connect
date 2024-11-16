@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - GLB.Connect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="sessiondetails.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="GLB.Connect Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="qnathreads.html">Q&A Threads</a></li>
+                <li><a href="lost&found.html">Lost & Found</a></li>
+                <li><a href="resources.html">Resource</a></li>
+                <li><a href="anonymous.html">Anonymous Post</a></li>
+                <li><a href="sessionsfirst.html">Sessions</a></li>
+                <li><a href="alumnifirst.html">Alumni Network</a></li>
+                <li><a href="aboutus.html">About</a></li>
+            </ul>
+        
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search...">
+            </div>
+        </div>
+         
+        </nav>
+        <div class="container">
+            <img src="sessionDetails.png" alt="Session Image" class="session">
+            <p class="section-heading">Session Setup Wizard Details</p>
+            <div class="square-wrapper">
+                <div class="dashed-square">
+                    <form>
+                        <div class="details">
+                            <label for="mentor-name">NAME OF THE MENTOR</label>
+                            <input type="text" id="mentor-name" placeholder="Write Your Name">
+        
+                            <label for="year-of-study">YEAR OF STUDY</label>
+                            <input type="text" id="year-of-study" placeholder="e.g., Second Year">
+        
+                            <label for="session-title">SESSION TITLE</label>
+                            <input type="text" id="session-title" placeholder="Enter Session Title">
+
+                            <label for="session-name">SESSION NAME</label>
+                            <input type="text" id="session-name" placeholder="Enter Session Name">
+        
+                            <label for="session-name">SESSION NAME</label>
+                            <input type="text" id="session-name" placeholder="Enter Session Name">
+                        </div>
+                    </form>
+                </div>
+                <div class="dashed-square">
+                    <form>
+                        <div class="details">
+                            <label for="session-duration">SESSION DURATION</label>
+                            <input type="text" id="session-duration" placeholder="e.g., 1 hour">
+                            <label>UPLOAD THUMBNAIL</label>
+                            <input type="file" id="thumbnail" accept="image/*" style="display: none;">
+                            <label for="thumbnail" class="file-upload-icon">
+                                <img src="upload-icon.png" alt="Upload Thumbnail" width="24" height="24">
+                                Select Thumbnail
+                            </label>
+        
+                            <label for="session-description">SESSION DESCRIPTION</label>
+                            <textarea id="session-description" placeholder="Enter session details" rows="4"></textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="publish-button-wrapper">
+            <button type="submit" class="publish-button">Publish Session</button>
+        </div>
+    </div>
+
+        

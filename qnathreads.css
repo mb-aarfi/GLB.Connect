@@ -1,0 +1,224 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 48px;
+  z-index: 9999;
+}
+
+.main-content {
+  padding-top: 80px;
+}
+
+.navbar.scrolled {
+  background-color: black;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: #ff2975;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff2975;
+}
+
+.search-bar {
+  margin-top: 5px;
+  display: flex;
+  margin-right: 70px;
+  justify-content: center;
+}
+
+.search-input {
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  width: 180px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: #ccc;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #ff2975; /* Highlight border on focus */
+}
+
+.searchb {
+  display: flex;
+  margin-top: 130px;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  width: 500px;
+  position: absolute;  /* Position it relative to its closest positioned ancestor */
+  left: 50%;  /* Center it horizontally */
+  transform: translate(-50%, -50%);  /* Adjust position to truly center it */
+  outline: 2px solid #000000; /* Adds a default red outline */
+}
+
+.searchb input {
+  border: none;
+  outline: none; /* Removes default focus outline from input */
+  background: transparent;
+  color: #000; /* Ensure the input text is visible */
+  padding: 5px;
+  width: 100%;
+}
+
+
+.searchb button {
+  background: none;
+  border: none;
+  color: #FF6600;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.mentor-search {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 150px 30px;
+  text-align: center;
+}
+
+.mentor-batch {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.mentor-batch h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #ff2975;
+}
+
+.mentor-slider-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.mentor-grid {
+  display: flex;
+  overflow: hidden; /* Ensures only visible items are displayed */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  width: 100%;
+  gap: 20px; /* Space between mentor cards */
+}
+
+.mentor-card {
+  min-width: 200px; /* Fixed width for each card to allow sliding */
+  flex-shrink: 0; /* Prevent shrinking of items */
+}
+
+.prev-btn, .next-btn {
+  background-color: #ff2975;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.prev-btn {
+  left: -70px; /* Adjust distance from grid */
+}
+
+.next-btn {
+  right: -70px; /* Adjust distance from grid */
+}
+
+.prev-btn:hover, .next-btn:hover {
+  background-color: #e91e63;
+}
+
+
+.mentor-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.social-footer {
+  background-color: #ff2975; /* Pink background */
+  padding: 15px 0;
+  color: #fff;
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 1.5em;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+}
+
+.social-icons img {
+  width: 30px; /* Adjust size as needed */
+  height: 30px;
+  filter: brightness(0) invert(1); /* Ensures icons are white on pink */
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost and Found</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="foundcss.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#" class="logo">
+            <img src="logo.png" alt="GLB.Connect Logo" class="logo-img">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="qnathreads.html">Q&A Threads</a></li>
+            <li><a href="lost&found.html">Lost & Found</a></li>
+            <li><a href="resources.html">Resource</a></li>
+            <li><a href="anonymous.html">Anonymous Post</a></li>
+            <li><a href="sessionsfirst.html">Sessions</a></li>
+            <li><a href="alumnifirst.html">Alumni Network</a></li>
+            <li><a href="aboutus.html">About</a></li>
+        </ul>
+    
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search...">
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="left-section">
+            <h1>Find your lost items with ease...</h1>
+            <p>Post information on lost and claim lost items</p>
+            <div class="image-container">
+                <img src="Rectangle 18.png" alt="Lost and Found">
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="form-header">
+                <h2>Found Item</h2>
+            </div>
+            <form>
+                <label>Attach Image:</label>
+                <div class="image-upload">
+                    <label for="file-upload" class="scan-item">Uplaod photo</label>
+                    <input type="file" id="file-upload" accept="image/*">
+                </div>
+                <label>Select Category:</label>
+                <select>
+                    <option>Select</option>
+                    <option>Mobile Phone</option>
+                    <option>Bottle</option>
+                    <option>Watch</option>
+                    <option>Others</option>
+
+                    <!-- Add more options here -->
+                </select>
+                <label>Date Found:</label>
+                <input type="date">
+                <label>Add Geotag:</label>
+                <input type="text" placeholder="Find Location">
+                <label>Description:</label>
+                <textarea placeholder="Type here (e.g., color, company, size)"></textarea>
+                <label>Pickup Location:</label>
+                <input type="text" placeholder="Provide location">
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
