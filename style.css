@@ -47,11 +47,16 @@ body {
     gap: 20px;
 }
 
+
 .nav-links a {
     color: #fff;
     text-decoration: none;
     font-size: 1em;
     transition: color 0.3s;
+}
+
+.nav-links a.active {
+    color: #ff2975; /* Highlight color */
 }
 
 .nav-links a:hover {

@@ -53,12 +53,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>I think Lost at this Location:</label>
-                    <div class="location-buttons">
-                        <button type="button">Location 1</button>
-                        <button type="button">Location 2</button>
-                        <button type="button">Location 3</button>
-                    </div>
+                    <label for="location">I think Lost at this Location:</label>
+                    <textarea id="location" name="location" placeholder="Enter the location where you think the item was lost"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="lost-since">Lost Since:</label>
@@ -67,8 +63,11 @@
                         <option value="today">Today</option>
                         <option value="1-week">1 Week Ago</option>
                         <option value="1-month">1 Month Ago</option>
+                        <option value="select-date">Select Date</option>
                     </select>
+                    <input type="date" id="specific-date" name="specific-date" style="display:none;">
                 </div>
+                
                 <div class="form-group">
                     <label for="description">Description:</label>
                     <input type="text" id="description" name="description" placeholder="Type here (e.g., color, company, size)">
@@ -80,5 +79,17 @@
             </form>
         </div>
     </div>
+
+    <script>
+        document.getElementById('lost-since').addEventListener('change', function () {
+            var dateInput = document.getElementById('specific-date');
+            if (this.value === 'select-date') {
+                dateInput.style.display = 'block';
+            } else {
+                dateInput.style.display = 'none';
+            }
+        });
+    </script>
+    
 </body>
 </html>

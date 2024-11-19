@@ -64,6 +64,19 @@ document.querySelector('.start-btn').addEventListener('click', function(e) {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('.nav-links a');
+    const currentPage = window.location.pathname;
+
+    links.forEach(link => {
+        if (currentPage.includes(link.getAttribute('href'))) {
+            link.classList.add('active');
+        }
+    });
+});
+
+
+
 
 
 

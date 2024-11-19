@@ -58,13 +58,68 @@
                 <div class="message received">Sure! Feel free to ask.</div>
             </div>
 
+            
+
             <!-- Input Section -->
-            <div class="chat-input">
-                <textarea rows="1" placeholder="Write a message..."></textarea>
-                <button><i class="fas fa-smile"></i></button>
-                <button><i class="fas fa-microphone"></i></button>
-                <button><i class="fas fa-paperclip"></i></button>
-            </div>
+<div class="chat-input">
+    <textarea rows="1" placeholder="Write a message..."></textarea>
+    <button class="send-icon">
+        <i class="fa fa-paper-plane"></i>
+      </button>
+    <button class="emoji-btn" onclick="toggleEmojiPicker()">
+        <i class="fas fa-smile"></i>
+    </button>
+
+    <!-- Microphone Icon Button -->
+<button class="microphone-btn">
+    <i class="fas fa-microphone"></i>
+</button>
+
+<!-- Audio Element to Playback Recording -->
+<audio id="audio-playback" controls style="display: none;"></audio>
+
+    <!-- File Upload Button (Paperclip) -->
+<button class="file-upload-btn">
+    <i class="fas fa-paperclip"></i>
+</button>
+
+<!-- Hidden File Input -->
+<input type="file" id="file-input" style="display: none;" />
+
+
+    <!-- Emoji Picker -->
+    <div id="emoji-picker" class="emoji-picker">
+        <!-- Add more emojis here -->
+        <div class="emoji" onclick="insertEmoji('😀')">😀</div>
+        <div class="emoji" onclick="insertEmoji('😁')">😁</div>
+        <div class="emoji" onclick="insertEmoji('😂')">😂</div>
+        <div class="emoji" onclick="insertEmoji('😃')">😃</div>
+        <div class="emoji" onclick="insertEmoji('😄')">😄</div>
+        <div class="emoji" onclick="insertEmoji('😅')">😅</div>
+        <div class="emoji" onclick="insertEmoji('😆')">😆</div>
+        <div class="emoji" onclick="insertEmoji('😇')">😇</div>
+        <div class="emoji" onclick="insertEmoji('😈')">😈</div>
+        <div class="emoji" onclick="insertEmoji('😉')">😉</div>
+        <div class="emoji" onclick="insertEmoji('😊')">😊</div>
+        <div class="emoji" onclick="insertEmoji('😍')">😍</div>
+        <div class="emoji" onclick="insertEmoji('😘')">😘</div>
+        <div class="emoji" onclick="insertEmoji('😜')">😜</div>
+        <div class="emoji" onclick="insertEmoji('😝')">😝</div>
+        <div class="emoji" onclick="insertEmoji('😛')">😛</div>
+        <div class="emoji" onclick="insertEmoji('🤑')">🤑</div>
+        <div class="emoji" onclick="insertEmoji('🤗')">🤗</div>
+        <div class="emoji" onclick="insertEmoji('🤔')">🤔</div>
+        <div class="emoji" onclick="insertEmoji('🤩')">🤩</div>
+        <div class="emoji" onclick="insertEmoji('🥳')">🥳</div>
+        <div class="emoji" onclick="insertEmoji('🥺')">🥺</div>
+        <div class="emoji" onclick="insertEmoji('😎')">😎</div>
+        <div class="emoji" onclick="insertEmoji('🤨')">🤨</div>
+        <div class="emoji" onclick="insertEmoji('😜')">😜</div>
+        <!-- You can keep adding more emojis in a similar fashion -->
+    </div>    
+</div>
+
+
         </div>
     </main>
 
@@ -95,12 +150,122 @@
                 isAnonymous = true;
             } else {
                 // Show details
-                userName.textContent = 'John Doe';
+                userName.textContent = 'Nisha';
                 userImage.src = 'https://via.placeholder.com/40';
                 button.textContent = 'Be Anonymous';
                 isAnonymous = false;
             }
         }
+
+// Toggle emoji picker visibility
+function toggleEmojiPicker() {
+    const emojiPicker = document.getElementById('emoji-picker');
+    
+    // Check if picker is currently visible
+    if (emojiPicker.style.display === 'grid') {
+        // Hide emoji picker with smooth transition
+        emojiPicker.style.opacity = '0';
+        emojiPicker.style.pointerEvents = 'none';
+        setTimeout(() => {
+            emojiPicker.style.display = 'none'; // Ensure it's hidden after transition
+        }, 300); // Wait for transition time before setting display to none
+    } else {
+        // Show emoji picker with smooth transition
+        emojiPicker.style.display = 'grid';
+        setTimeout(() => {
+            emojiPicker.style.opacity = '1';
+            emojiPicker.style.pointerEvents = 'auto';
+        }, 10); // Small delay before applying opacity and pointer events
+    }
+}
+
+// Insert selected emoji into the textarea
+function insertEmoji(emoji) {
+    const textArea = document.querySelector('.chat-input textarea');
+    textArea.value += emoji; // Insert the emoji at the current cursor position
+    textArea.focus(); // Ensure focus stays on the textarea
+    toggleEmojiPicker(); // Hide the emoji picker after selecting an emoji
+}
+
+// Select the paperclip button and the file input
+const fileUploadButton = document.querySelector('.file-upload-btn');
+const fileInput = document.getElementById('file-input');
+
+// When the paperclip button is clicked, trigger the file input
+fileUploadButton.addEventListener('click', () => {
+    fileInput.click(); // Open the file selection dialog
+});
+
+// Optional: Add event listener to handle the file selection (e.g., display the selected file name)
+fileInput.addEventListener('change', (event) => {
+    const fileName = event.target.files[0]?.name;
+    if (fileName) {
+        console.log('Selected file:', fileName); // You can update this to show the file name in the UI
+    }
+});
+
+
+// Select the microphone button and audio playback element
+const microphoneButton = document.querySelector('.microphone-btn');
+const audioPlayback = document.getElementById('audio-playback');
+
+let mediaRecorder;
+let audioChunks = [];
+
+// Check for browser support for accessing microphone
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    // Event listener to start or stop recording
+    microphoneButton.addEventListener('click', async () => {
+        try {
+            // Request microphone permission and start recording
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+
+            // Initialize MediaRecorder with the audio stream
+            mediaRecorder = new MediaRecorder(stream);
+
+            // When data is available (when the user stops recording)
+            mediaRecorder.ondataavailable = (event) => {
+                audioChunks.push(event.data);
+            };
+
+            // When the recording stops, create a blob URL to play back the audio
+            mediaRecorder.onstop = () => {
+                const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                const audioUrl = URL.createObjectURL(audioBlob);
+                audioPlayback.src = audioUrl;
+                audioPlayback.style.display = 'block'; // Show the audio player
+            };
+
+            // Start recording
+            if (mediaRecorder.state === 'inactive') {
+                audioChunks = []; // Clear previous recording chunks
+                mediaRecorder.start();
+                microphoneButton.innerHTML = '<i class="fas fa-stop"></i>'; // Change icon to stop recording
+            } else {
+                // Stop recording if already recording
+                mediaRecorder.stop();
+                microphoneButton.innerHTML = '<i class="fas fa-microphone"></i>'; // Change icon back to microphone
+            }
+        } catch (err) {
+            console.error('Error accessing microphone:', err);
+        }
+    });
+} else {
+    console.error('Your browser does not support audio recording.');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('.nav-links a');
+    const currentPage = window.location.pathname;
+
+    links.forEach(link => {
+        if (currentPage.includes(link.getAttribute('href'))) {
+            link.classList.add('active');
+        }
+    });
+});
+
+
     </script>
 </body>
 </html>

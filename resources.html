@@ -16,7 +16,7 @@
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="qnathreads.html">Q&A Threads</a></li>
-        <li><a href="lost&found.html">Lost & Found</a></li>
+        <li><a href="lostandfound.html">Lost & Found</a></li>
         <li><a href="resources.html">Resource</a></li>
         <li><a href="anonymous.html">Anonymous Post</a></li>
         <li><a href="sessionsfirst.html">Sessions</a></li>
@@ -46,6 +46,18 @@
     </div>
 </footer>
 
-  <script src="scripts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('.nav-links a');
+    const currentPage = window.location.pathname;
+
+    links.forEach(link => {
+        if (currentPage.includes(link.getAttribute('href'))) {
+            link.classList.add('active');
+        }
+    });
+});
+
+  </script>
 </body>
 </html>

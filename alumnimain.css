@@ -66,6 +66,10 @@ body {
     color: #ff2975;
 }
 
+.nav-links a.active {
+    color: #ff2975; /* Highlight color */
+}
+
 .search-bar {
     margin-top: 5px;
     display: flex;

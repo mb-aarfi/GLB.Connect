@@ -5,13 +5,6 @@ body {
     background-color: #f9f9f9;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-}
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -90,7 +83,6 @@ body {
     border-color: #ff2975; /* Highlight border on focus */
 }
 
-
 /* Main Section */
 .main-container {
     display: flex;
@@ -133,6 +125,7 @@ body {
     padding: 20px;
     width: 350px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Ensure padding doesn't push elements outside */
 }
 
 .right-content h2 {
@@ -155,7 +148,27 @@ body {
 }
 
 .form-group input,
-.form-group select {
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box; /* Prevent overflow of elements */
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff2975;
+}
+
+/* Hidden input field by default */
+#specific-date {
+    display: none;
     width: 100%;
     padding: 10px;
     font-size: 1rem;
@@ -164,32 +177,11 @@ body {
     background-color: #fff;
 }
 
-.form-group input:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: #ff2975;
+/* Display the date picker when 'Select Date' is chosen */
+#lost-since[value="select-date"] + #specific-date {
+    display: block;
 }
 
-.location-buttons {
-    display: flex;
-    justify-content: space-between;
-}
-
-.location-buttons button {
-    width: 30%;
-    padding: 10px;
-    border: none;
-    background-color: #ffe6f0;
-    color: #ff2975;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.location-buttons button:hover {
-    background-color: #ff2975;
-    color: #fff;
-}
 
 .btn-group {
     display: flex;

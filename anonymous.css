@@ -6,12 +6,6 @@ body {
     background-color: #f9f9f9;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-}
 
 .navbar {
     display: flex;
@@ -64,6 +58,10 @@ body {
     color: #ff2975;
 }
 
+.nav-links a.active {
+    color: #ff2975; /* Highlight color */
+}
+
 .search-bar {
     margin-top: 5px;
     display: flex;
@@ -91,31 +89,22 @@ body {
     border-color: #ff2975; /* Highlight border on focus */
 }
 
-/* Sidebar Styles */
-.sidebar {
-    flex: 1;
-    background-color: #ffd1dc;
-    padding: 1rem;
-    text-align: center;
-    margin-top: -80px;
-    margin-right: 380px;
-    width: 100%;
-    min-height: 85vh; /* Ensure sidebar spans full height */
-    box-sizing: border-box;
-}
 
 .sidebar-logo {
-    margin-top: 100px; /* Adjusted for better spacing */
+    margin-top: 10px; /* Adjusted for better spacing */
     width: 270px;
     height: 200px;
+    margin-left: 200px;
 }
 
 .sidebar p {
-    margin-top: 20px; /* Increased margin for better spacing */
-    font-size: 24px; /* Adjusted for better readability */
+    margin-top: 0px; /* Increased margin for better spacing */
+    font-size: 30px; /* Adjusted for better readability */
     font-weight: bolder;
     color: black;
     font-family: 'Poppins', sans-serif;
+    margin-right: 400px;
+    margin-left: 218px;
 }
 
 /* Main Content Adjustment */
@@ -128,18 +117,20 @@ body {
 
 /* Chat Interface Styles */
 .chat-container {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     height: 600px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    margin-right: 190px;
+    margin-right: 150px;
     margin-top: -72px;
-    overflow: hidden; /* Added margin for spacing */
-    /* Positioning within the main content */
+    overflow: hidden;
+    margin-bottom: 12px;
 }
+
 
 .chat-header {
     display: flex;
@@ -241,6 +232,69 @@ body {
 .chat-input button:hover {
     color: #0056d3;
 }
+
+
+
+/* Emoji picker */
+.emoji-picker {
+    display: none;
+    position: absolute;
+    bottom: 40px; /* Adjust to be above the emoji button */
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 100;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    max-width: 200px;
+    transition: all 0.3s ease-in-out; /* Smooth transition for visibility */
+    opacity: 0; /* Make invisible initially */
+    pointer-events: none; /* Disable interactions when hidden */
+}
+
+/* Emoji button styles */
+.emoji-picker .emoji {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.emoji-picker .emoji:hover {
+    transform: scale(1.2);
+}
+
+/* Chat input area */
+.chat-input {
+    position: relative; /* Relative positioning for the emoji picker */
+}
+
+.emoji-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #ff2975;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Make sure textarea and buttons are aligned properly */
+.chat-input textarea {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    resize: none;
+    outline: none;
+}
+
+
+
 
 /* Footer Styles */
 .social-footer {

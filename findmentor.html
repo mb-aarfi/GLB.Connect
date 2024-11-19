@@ -14,14 +14,14 @@
             <img src="logo.png" alt="GLB.Connect Logo" class="logo-img">
         </a>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Q&A Threads</a></li>
-            <li><a href="#">Lost & Found</a></li>
-            <li><a href="#">Resource</a></li>
-            <li><a href="#">Anonymous Post</a></li>
-            <li><a href="#">Sessions</a></li>
-            <li><a href="#">Alumni Network</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="qnathreads.html">Q&A Threads</a></li>
+            <li><a href="lostandfound.html">Lost & Found</a></li>
+            <li><a href="resources.html">Resource</a></li>
+            <li><a href="anonymous.html">Anonymous Post</a></li>
+            <li><a href="sessionsfirst.html">Sessions</a></li>
+            <li><a href="alumnifirst.html">Alumni Network</a></li>
+            <li><a href="aboutus.html">About</a></li>
         </ul>
     
         <div class="search-bar">
@@ -29,56 +29,55 @@
         </div>
     </div>
 
-        <div class="searchb">
-            <input type="text" placeholder="Search your alumni">
-            <button>🔍</button>
-        </div>
+    <div class="searchb">
+      <input type="text" placeholder="Search your alumni" id="alumni-search-input">
+      <button id="search-btn">🔍</button>
+  </div>
+  
     </header>
 
   <!-- Carousel Section -->
   <section class="carousel">
     <button class="carousel-btn prev-btn">&#9664;</button>
-    <div class="carousel-items">
-      <div class="carousel-item">
-        <img src="almun.png" alt="David Miller">
-        <h4>Muhammad Baqir</h4>
-        <p>Microsoft</p>
-        <span>Software Engineer</span>
-      </div>
-      
-      <div class="carousel-item">
-        <img src="almun.png" alt="David Miller">
-        <h4>Nisha Ahmad</h4>
-        <p>Microsoft</p>
-        <span>Software Engineer</span>
-      </div>
-  
-      <div class="carousel-item">
-        <img src="almun.png" alt="David Miller">
-        <h4>Maahi Dhaka</h4>
-        <p>Amazon</p>
-        <span>Software Engineer</span>
-      </div>
-  
-      <div class="carousel-item">
-        <img src="almun.png" alt="David Miller">
-        <h4>Kshitij Dwivedi</h4>
-        <p>Amazon</p>
-        <span>Software Engineer</span>
-      </div>
-  
-      <div class="carousel-item">
-        <img src="almun.png" alt="David Miller">
-        <h4>John Doe</h4>
-        <p>Google</p>
-        <span>Senior Developer</span>
-      </div>
-
-      <div class="carousel-item">
-        <img src="almun.png" alt="David Miller">
-        <h4>John Doe</h4>
-        <p>Meta</p>
-        <span>Senior Developer</span>
+    <div class="carousel-wrapper">
+      <div class="carousel-items">
+        <!-- Cards will go here -->
+        <div class="carousel-item">
+          <img src="almun.png" alt="David Miller">
+          <h4>Muhammad Baqir</h4>
+          <p>Microsoft</p>
+          <span>Software Engineer</span>
+        </div>
+        <div class="carousel-item">
+          <img src="almun.png" alt="Nisha Ahmad">
+          <h4>Nisha Ahmad</h4>
+          <p>Microsoft</p>
+          <span>Software Engineer</span>
+        </div>
+        <div class="carousel-item">
+          <img src="almun.png" alt="Maahi Dhaka">
+          <h4>Maahi Dhaka</h4>
+          <p>Amazon</p>
+          <span>Software Engineer</span>
+        </div>
+        <div class="carousel-item">
+          <img src="almun.png" alt="Kshitij Dwivedi">
+          <h4>Kshitij Dwivedi</h4>
+          <p>Amazon</p>
+          <span>Software Engineer</span>
+        </div>
+        <div class="carousel-item">
+          <img src="almun.png" alt="John Doe">
+          <h4>John Doe</h4>
+          <p>Google</p>
+          <span>Senior Developer</span>
+        </div>
+        <div class="carousel-item">
+          <img src="almun.png" alt="John Doe">
+          <h4>John Doe</h4>
+          <p>Meta</p>
+          <span>Senior Developer</span>
+        </div>
       </div>
     </div>
     <button class="carousel-btn next-btn">&#9654;</button>
@@ -105,55 +104,53 @@
 </footer>
 
 <script>
-let currentIndex = 4; // Start from the 5th item (index 4)
+let currentIndex = 0;
+const itemsToShow = 4;  // Number of cards to show at once
 const carouselItems = document.querySelectorAll('.carousel-item');
 const totalItems = carouselItems.length;
+const itemWidth = carouselItems[0].offsetWidth;
+const carouselWrapper = document.querySelector('.carousel-wrapper');
+const carouselContainer = document.querySelector('.carousel-items');
 
-// Initially show the first 4 items
-function showInitialItems() {
-  for (let i = 0; i < 4; i++) {
-    carouselItems[i].classList.add('show');
-  }
+// Function to move the carousel by 'n' items
+function moveCarousel() {
+  carouselContainer.style.transform = `translateX(-${currentIndex * (itemWidth + 20)}px)`;
 }
 
-function showItem(index) {
-  // Show the item corresponding to the index, add 'show' class to it
-  if (index < totalItems) {
-    carouselItems[index].classList.add('show');
-  }
-}
-
-function hideItem(index) {
-  // Remove the 'show' class to hide the item
-  if (index < totalItems) {
-    carouselItems[index].classList.remove('show');
-  }
-}
-
+// Function to go to the next set of cards
 function nextItem() {
-  // Hide the current item and show the next one
-  if (currentIndex < totalItems) {
-    hideItem(currentIndex);
+  if (currentIndex < totalItems - itemsToShow) {
     currentIndex++;
-    showItem(currentIndex);
+    moveCarousel();
   }
 }
 
+// Function to go to the previous set of cards
 function prevItem() {
-  // Hide the current item and show the previous one
-  if (currentIndex > 4) {  // Ensure we don't go back to the first 4 items
-    hideItem(currentIndex);
+  if (currentIndex > 0) {
     currentIndex--;
-    showItem(currentIndex);
+    moveCarousel();
   }
 }
 
-// Initialize by showing the first 4 items
-showInitialItems();
-
-// Attach event listeners for the buttons
+// Attach event listeners to the buttons
 document.querySelector('.next-btn').addEventListener('click', nextItem);
 document.querySelector('.prev-btn').addEventListener('click', prevItem);
+
+// Initial display of items
+moveCarousel();
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('.nav-links a');
+    const currentPage = window.location.pathname;
+
+    links.forEach(link => {
+        if (currentPage.includes(link.getAttribute('href'))) {
+            link.classList.add('active');
+        }
+    });
+});
 
 
   </script>

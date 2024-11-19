@@ -63,6 +63,10 @@ body {
   color: #ff2975;
 }
 
+.nav-links a.active {
+  color: #ff2975; /* Highlight color */
+}
+
 .search-bar {
   margin-top: 5px;
   display: flex;
@@ -92,7 +96,7 @@ body {
 
 .searchb {
   display: flex;
-  margin-top: 130px;
+  margin-top: -22px;
   align-items: center;
   justify-content: center;
   background: #ffffff;
@@ -104,6 +108,7 @@ body {
   transform: translate(-50%, -50%);  /* Adjust position to truly center it */
   outline: 2px solid #000000; /* Adds a default red outline */
 }
+
 
 .searchb input {
   border: none;
@@ -124,14 +129,15 @@ body {
 }
 
 /* Carousel */
-/* Carousel Section */
 .carousel {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
   position: relative;
+  margin-top: 150px; /* Adjust margin to ensure it doesn't overlap with the search bar */
 }
+
 
 .carousel-btn {
   font-size: 24px;
@@ -147,19 +153,20 @@ body {
 
 .prev-btn {
   left: 50px;
-  top: 300px;
 }
 
 .next-btn {
   right: 50px;
-  top: 300px;
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  width: 80%;  /* Adjust width to fit multiple items */
 }
 
 .carousel-items {
   display: flex;
-  margin-top: 150px;
-  overflow: hidden;
-  width: 80%; /* Adjust based on desired width */
+  transition: transform 0.5s ease-in-out;  /* Smooth transition */
 }
 
 .carousel-item {
@@ -169,12 +176,7 @@ body {
   padding: 15px;
   text-align: center;
   flex-shrink: 0;
-  width: 200px; /* Fixed width for each item */
-  display: none; /* Hide all items by default */
-}
-
-.carousel-item.show {
-  display: block; /* Only show items with the 'show' class */
+  width: 200px;  /* Each card's width */
 }
 
 .carousel-item img {
