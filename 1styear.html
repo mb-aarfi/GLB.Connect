@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLB.Connect - Resource Sharing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="1stcss.css">
+</head>
+<body>
+  <div class="navbar">
+    <a href="#" class="logo">
+        <img src="logo.png" alt="GLB.Connect Logo" class="logo-img">
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="qnathreads.html">Q&A Threads</a></li>
+        <li><a href="lost&found.html">Lost & Found</a></li>
+        <li><a href="resources.html">Resource</a></li>
+        <li><a href="anonymous.html">Anonymous Post</a></li>
+        <li><a href="sessionsfirst.html">Sessions</a></li>
+        <li><a href="alumnifirst.html">Alumni Network</a></li>
+        <li><a href="aboutus.html">About</a></li>
+    </ul>
+
+    <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Search...">
+    </div>
+</div>
+
+<div class="container">
+    <div class="categories">
+      <div class="category-card" onclick="navigateTo('academics')">
+        <img src="academics.png" alt="Academics Notes">
+        <h3>Academics Notes</h3>
+      </div>
+      <div class="category-card" onclick="navigateTo('gate')">
+        <img src="gate.png" alt="Gate Notes">
+        <h3>Gate Notes</h3>
+      </div>
+      <div class="category-card" onclick="navigateTo('quantum')">
+        <img src="quantum.jpg" alt="Quantum">
+        <h3>Quantum</h3>
+      </div>
+      <div class="category-card" onclick="navigateTo('placement')">
+        <img src="placement.png" alt="Placement Resources">
+        <h3>Placement Resources</h3>
+      </div>
+      <div class="category-card" onclick="navigateTo('others')">
+        <img src="other.png" alt="Others">
+        <h3>Others</h3>
+      </div>
+    </div>
+  </div>
+
+      <footer class="social-footer">
+        <div class="social-icons">
+            <a href="#" target="_blank"><img src="fb.png" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="Group.png" alt="Twitter"></a>
+            <a href="#" target="_blank"><img src="insta.png" alt="Instagram"></a>
+            <a href="#" target="_blank"><img src="Linkedin.png" alt="LinkedIn"></a>
+        </div>
+    </div>
+</footer>
+
+  <script>
+    function navigateTo(category) {
+  // Define the URL for each category
+  let url = '';
+
+  switch (category) {
+    case 'academics':
+      url = 'academics.html';  // Link to the Academics Notes page
+      break;
+    case 'gate':
+      url = 'gate.html';  // Link to the Gate Notes page
+      break;
+    case 'quantum':
+      url = 'quantum.html';  // Link to the Quantum page
+      break;
+    case 'placement':
+      url = 'placement.html';  // Link to the Placement Resources page
+      break;
+    case 'others':
+      url = 'others.html';  // Link to the Others page
+      break;
+    default:
+      url = 'index.html';  // Default page if the category is unknown
+  }
+
+  // Navigate to the respective page
+  window.location.href = url;
+}
+
+  </script>
+</body>
+</html>

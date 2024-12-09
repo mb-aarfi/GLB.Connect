@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLB.Connect - Resource Sharing</title>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="gatecss.css">
+</head>
+<body>
+  <div class="navbar">
+    <a href="#" class="logo">
+        <img src="logo.png" alt="GLB.Connect Logo" class="logo-img">
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="qnathreads.html">Q&A Threads</a></li>
+        <li><a href="lost&found.html">Lost & Found</a></li>
+        <li><a href="resources.html">Resource</a></li>
+        <li><a href="anonymous.html">Anonymous Post</a></li>
+        <li><a href="sessionsfirst.html">Sessions</a></li>
+        <li><a href="alumnifirst.html">Alumni Network</a></li>
+        <li><a href="aboutus.html">About</a></li>
+    </ul>
+
+    <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Search...">
+    </div>
+</div>
+
+<div class="main-container">
+    <div class="heading">
+      <h1>Gate Notes</h1>
+    </div>
+
+    <div class="add-button" onclick="openUploadDialog()">
+      <i class="fas fa-upload"></i> &nbsp; Add New Notes
+    </div>
+
+    <div class="notes-grid" id="notes-grid">
+      <!-- Notes will be dynamically populated here -->
+    </div>
+  </div>
+
+  <!-- File Upload Dialog -->
+  <input type="file" id="file-input" style="display:none;" onchange="uploadFile(event)">
+
+      <footer class="social-footer">
+        <div class="social-icons">
+            <a href="#" target="_blank"><img src="fb.png" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="Group.png" alt="Twitter"></a>
+            <a href="#" target="_blank"><img src="insta.png" alt="Instagram"></a>
+            <a href="#" target="_blank"><img src="Linkedin.png" alt="LinkedIn"></a>
+        </div>
+    </div>
+</footer>
+
+  <script>
+    // Firebase configuration (replace with your Firebase config)
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+
+// Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
+const storage = firebase.storage();
+const db = firebase.firestore();
+
+const notesGrid = document.getElementById('notes-grid');
+
+// Open File Upload Dialog
+function openUploadDialog() {
+  document.getElementById('file-input').click();
+}
+
+// Upload File
+async function uploadFile(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const storageRef = storage.ref(`notes/${file.name}`);
+  await storageRef.put(file);
+  const fileURL = await storageRef.getDownloadURL();
+
+  // Save metadata to Firestore
+  await db.collection('notes').add({
+    name: file.name,
+    url: fileURL,
+    uploadedAt: new Date()
+  });
+
+  alert('File uploaded successfully!');
+  fetchNotes(); // Refresh the notes grid
+}
+
+// Fetch and Display Notes
+async function fetchNotes() {
+  notesGrid.innerHTML = ''; // Clear existing notes
+  const querySnapshot = await db.collection('notes').get();
+  querySnapshot.forEach(doc => {
+    const note = doc.data();
+    const noteCard = document.createElement('div');
+    noteCard.classList.add('note-card');
+    noteCard.innerHTML = `
+      <p><strong>${note.name}</strong></p>
+      <a href="${note.url}" target="_blank">View</a>
+    `;
+    notesGrid.appendChild(noteCard);
+  });
+}
+
+// Initialize and Fetch Notes
+fetchNotes();
+
+  </script>
+</body>
+</html>

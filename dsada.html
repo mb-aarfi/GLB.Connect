@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLB.Connect - Resource Sharing</title>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="acedemicscss.css">
+</head>
+<body>
+  <div class="navbar">
+    <a href="#" class="logo">
+        <img src="logo.png" alt="GLB.Connect Logo" class="logo-img">
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="qnathreads.html">Q&A Threads</a></li>
+        <li><a href="lost&found.html">Lost & Found</a></li>
+        <li><a href="resources.html">Resource</a></li>
+        <li><a href="anonymous.html">Anonymous Post</a></li>
+        <li><a href="sessionsfirst.html">Sessions</a></li>
+        <li><a href="alumnifirst.html">Alumni Network</a></li>
+        <li><a href="aboutus.html">About</a></li>
+    </ul>
+
+    <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Search...">
+    </div>
+</div>
+
+<div class="upload-container">
+    <h2>Upload Your Notes</h2>
+    <input type="text" id="titleInput" placeholder="Title of the Notes" required>
+    <textarea id="descriptionInput" placeholder="Description" required></textarea>
+    <input type="text" id="categoryInput" placeholder="Category (e.g., Academics)" required>
+    <input type="url" id="fileInput" placeholder="Link to Your Notes (e.g., Google Drive URL)" required>
+    <button id="uploadButton">Upload Notes</button>
+  </div>
+  
+
+      <footer class="social-footer">
+        <div class="social-icons">
+            <a href="#" target="_blank"><img src="fb.png" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="Group.png" alt="Twitter"></a>
+            <a href="#" target="_blank"><img src="insta.png" alt="Instagram"></a>
+            <a href="#" target="_blank"><img src="Linkedin.png" alt="LinkedIn"></a>
+        </div>
+    </div>
+</footer>
+
+  <script>
+    // Firebase configuration (replace with your Firebase config)
+    const firebaseConfig = {
+  apiKey: "AIzaSyCUV1W79S8IhJDb0eitZd0-vdpDWu2GOg0",
+  authDomain: "glbconnect.firebaseapp.com",
+  projectId: "glbconnect",
+  storageBucket: "glbconnect.firebasestorage.app",
+  messagingSenderId: "508391493868",
+  appId: "1:508391493868:web:a18a0d7463c035df5695c9",
+  measurementId: "G-G7E88N2TLK"
+};
+
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+// Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
+const storage = firebase.storage();
+const db = firebase.firestore();
+
+const notesGrid = document.getElementById('notes-grid');
+
+// Open File Upload Dialog
+function openUploadDialog() {
+  document.getElementById('file-input').click();
+}
+
+// Upload File
+async function uploadFile(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const storageRef = storage.ref(`notes/${file.name}`);
+  await storageRef.put(file);
+  const fileURL = await storageRef.getDownloadURL();
+
+  // Save metadata to Firestore
+  await db.collection('notes').add({
+    name: file.name,
+    url: fileURL,
+    uploadedAt: new Date()
+  });
+
+  alert('File uploaded successfully!');
+  fetchNotes(); // Refresh the notes grid
+}
+
+// Fetch and Display Notes
+async function fetchNotes() {
+  notesGrid.innerHTML = ''; // Clear existing notes
+  const querySnapshot = await db.collection('notes').get();
+  querySnapshot.forEach(doc => {
+    const note = doc.data();
+    const noteCard = document.createElement('div');
+    noteCard.classList.add('note-card');
+    noteCard.innerHTML = `
+      <p><strong>${note.name}</strong></p>
+      <a href="${note.url}" target="_blank">View</a>
+    `;
+    notesGrid.appendChild(noteCard);
+  });
+}
+
+// Initialize and Fetch Notes
+fetchNotes();
+
+  </script>
+</body>
+</html>
